@@ -23,7 +23,7 @@
   --global-back-to-top-bg-color: rgba(
     #{color.red($black-color)},
     #{color.green($black-color)},
-    #{color.blue($black-color)},
+    #{color.channel($black-color, "blue", $space: rgb)},
     0.4
   );
   --global-back-to-top-text-color: #{$white-color};
@@ -94,7 +94,7 @@ html[data-theme="dark"] {
   --global-back-to-top-bg-color: rgba(
     #{color.red($white-color)},
     #{color.green($white-color)},
-    #{color.blue($white-color)},
+    #{color.channel($white-color, "blue", $space: rgb)},
     0.5
   );
   --global-back-to-top-text-color: #{$black-color};
