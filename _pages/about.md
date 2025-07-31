@@ -1,30 +1,22 @@
 ---
+
+title: About
 layout: about
-title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+description: 
 
 profile:
   align: right
   image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
 
+news: false  # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
-social: false # includes social icons at the bottom of the page
-
-announcements:
-  enabled: false # includes a list of news items
-  scrollable: false # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
-
-latest_posts:
-  enabled: false
-  scrollable: false # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
+social: true  # includes social icons at the bottom of the page
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I am an assistant professor with the <a href="https://www.colorado.edu/business/">Leeds School of Business</a> (and <a href="https://www.colorado.edu/cmci/infoscience">Information Science</a>, by courtesy) at the University of Colorado, Boulder. I earned a PhD in computer science in 2021 from the <a href="https://www.cics.umass.edu/">University of Massachusetts, Amherst</a>, where I was a member of the <a href="https://nlp.cs.umass.edu/">UMass NLP</a> group. 
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+As a researcher, I focus on applying NLP methods to topics in IS. Recent papers focus on application of <a href="https://www.sciencedirect.com/science/article/abs/pii/S0268401224000598">large language models in decision support</a> and application of text classification to <a href="https://misq.umn.edu/ai-augmented-content-validation-in-behavioral-research-development-and-evaluation-of-the-rater-system.html">support behavioral research</a>. Methodologically, I am also very interested in human--computer interaction and causal inference, and I have a longstanding topical interest in news, media, and current events.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+As a PhD student, my dissertation focused on developing new natural language processing methods for new intelligent user interfaces, with a particular emphasis on tools and methods for searching, analyzing and making sense of large bodies of text.
+As a part of that work, I designed and built <a href="https://arxiv.org/pdf/1708.01944.pdf">systems</a> with collaborators from <a href="https://www.cics.umass.edu/people/mahyar-narges">human-computer interaction</a>, developed <a href="https://www.aclweb.org/anthology/D19-1612.pdf">algorithms</a> for efficient summarization, and researched new <a href="https://www.aclweb.org/anthology/N18-1159.pdf">natural language processing techniques</a> to support new ways of <a href="https://www.aclweb.org/anthology/D19-5414.pdf">analyzing documents</a>. I described these earlier efforts in a 2022 <a href="/assets/pdf/ResearchStatement.pdf"><b>research statement</b></a>, which is now a little out-of-date.
