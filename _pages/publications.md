@@ -3,7 +3,7 @@ layout: page
 permalink: /publications/
 title: Publications
 description: Conference and workshop papers.
-years: [2024,2022,2019,2018,2017,2016]
+years: [2025,2024,2022,2019,2018,2017,2016]
 nav: true
 ---
 
