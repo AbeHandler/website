@@ -12,7 +12,7 @@ nav: true
 <h6><b><a href="https://docs.google.com/document/d/1T-17J0D5Bk4lgCF3zI9fUgMp523VLLF-_11SvFh8ETA/edit?usp=sharing" target="_blank">BAIM 3220:  Introduction to Python Programming</a></b></h6>
 An undergraduate class which introduces students to Python programming for business analytics.
 
-<h6><b>Natural langauge processing for healthcare analytics (hosted on CU's Canvas page)</b></h6>
+<h6><b><a href="https://experts.colorado.edu/display/coursename_MSBX-5425"  target="_blank">Natural langauge processing for healthcare analytics (hosted on CU's Canvas page</a>)</b></h6>
 
 
 <br>
