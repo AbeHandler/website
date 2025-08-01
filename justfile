@@ -6,3 +6,6 @@ build:
 
 serve:
 	bundle exec jekyll serve
+
+deploy:
+	aws s3 cp _site s3://www.abehandler.com  --recursive
