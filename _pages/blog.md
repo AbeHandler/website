@@ -7,7 +7,6 @@ nav_order: 1
 ---
 
 <div class="post">
-  <h1>Blog</h1>
   
   <ul class="post-list">
     {% for post in site.posts %}
