@@ -86,6 +86,8 @@ Phew. OK so that lays out the five strategies that DSR researchers use to apply 
 
 - Second, based on this analysis, "theory" does seem to be optional in design science research, especially at ISR. In the past, I have abandoned projects because I could not see a path towards a theoretical contribution. But in some cases, it may be OK to submit a DSR paper without theory. 
 
+## Footnotes
+
 [^1]: The authors also include a system description under the broad header "Theory and Motivation" but I think that may be a formatting mistake.
 
 [^2]: You could argue that papers like Valogianni et al. (2025) offer a kind of theory in that they have a model of the world (people respond to economic incentives). But they don't explicitly use a named theory in their work.
