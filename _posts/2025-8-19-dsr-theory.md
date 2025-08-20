@@ -66,7 +66,7 @@ This sense of theory as background is a little different from canonical definiti
 
 Another common strategy was to use a "kernel theory" to guide the development of an artifact. A kernel theory is a description of reality which informs prescriptive principles about how to build an artifact.
 
-This strategy is probably the most well developed approach in the design science literature. It seems to come from (Walls et al., 1992), who formally articulated some of differences between classical business "theory" (Dubin, 1978) and "theory" in a goal-oriented DSR context.
+This strategy is probably the most well developed approach in the design science literature. It seems to come from Walls et al. (1992), who formally articulated some of differences between classical business "theory" (Dubin, 1978) and "theory" in a goal-oriented DSR context.
 
 Li et al. (2024), Wambsganss et al.(2024) and Liu et al. (2025) each use a kernel theory. For example, Li et al. (2024) use a theory of how people learn ("cognitive load theory") to inform the development of educational software.
 
