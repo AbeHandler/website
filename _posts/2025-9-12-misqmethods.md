@@ -2,7 +2,7 @@
 layout: post
 title:  'How do you write a "Methods Article" for MIS Quarterly?' 
 date:   2025-09-12 12:00:53-0400
-categories: DSR
+categories: MISQ
 ---
 
 
