@@ -100,22 +100,22 @@ The papers (1) lay out a fundamental methodological problem (2) propose some sol
 </table>
 
 
-<h5 style="margin-top: 15px;">Lay out a fundamental problem</h5>
+<h3 style="margin-top: 15px;">Lay out a fundamental problem</h3>
 
 MISQ methods papers begin by establishing some issue. For Larsen & Bong (2015), the problem is that the same construct may have different names across different studies, which makes it hard to build cumulative knowledge. For Shin et al. (2020), the problem is that analyzing visual content on social media requires domain knowledge, manual coding, and methodological expertise. See the table with this post.
 
-Note that many of the proposed problems apply to research outside of IS and that the problems are also widely applicable to broad swathes of IS research. MISQ methods papers may pinpoint very specific methodological issues but the issues are relevant to broad sets of IS papers (e.g., DSR papers, or papers using multiple regression).
+Note that many of the proposed problems apply to research outside of IS and that the problems are also widely applicable to broad swathes of IS research. MISQ methods papers may pinpoint very specific methodological issues but the issues are relevant to broad sets of IS papers, like all DSR papers (Tuunanen et al., 2024) or all IS papers that may have correlated inputs to a linear model (Goodhue et al., 2017).
 
-<h5 style="margin-top: 15px;">Propose some solution to the problem</h5>
+<h3 style="margin-top: 15px;">Propose some solution to the problem</h3>
 
 Nearly all papers all propose some tool or approach for solving their problem. For example, Schecter et al. (2022) propose an estimator to address measurement error in network analysis and Compeau et al. (2022) propose a procedure for updating constructs amid technological change.
 
 Additionally, note that the papers present techniques which are more or less fully-developed and ready to go. Many papers achieve this by extending established research streams from outside IS. For example, Shin et al. (2020) extend established work on ConvNets while Larsen & Bong (2015) extend on established work on LSA. This is a little different from CS where methods papers may make incremental progress towards a distant goal. MISQ methods articles present techniques which can be usefully applied right now.
 
-<h5 style="margin-top: 15px;">Evaluate or demonstrate the solution</h5>
+<h3 style="margin-top: 15px;">Evaluate or demonstrate the solution</h3>
 
 Having introduced the problem and solution, MISQ methods articles proceed to some sort of evaluation or demonstration. You see a lot of different things here including Monte Carlo simulations, ML benchmark comparisons, case studies, and controlled experiments with real researchers. See the table below for details.
 
-<h5 style="margin-top: 15px;">Notes</h5>
+<h3 style="margin-top: 15px;">Notes</h3>
 [1] A few methods papers don't fit this framework. For example, Wiesche et al. (2017) is more like a literature review. But the bulk of MISQ methods papers fit this broad template.
 
