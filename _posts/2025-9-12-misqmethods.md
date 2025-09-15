@@ -114,7 +114,7 @@ Additionally, note that the papers present techniques which are more or less ful
 
 <h3 style="margin-top: 15px;">Evaluate or demonstrate the solution</h3>
 
-Having introduced the problem and solution, MISQ methods articles proceed to some sort of evaluation or demonstration. You see a lot of different things here including Monte Carlo simulations, ML benchmark comparisons, case studies, and controlled experiments with real researchers. See the table below for details.
+Having introduced the problem and solution, MISQ methods articles proceed to some sort of evaluation or demonstration. You see a lot of different things here including Monte Carlo simulations, ML benchmark comparisons, case studies, and controlled experiments with real researchers. See the table for details.
 
 <h3 style="margin-top: 15px;">Notes</h3>
 [1] A few methods papers don't fit this framework. For example, Wiesche et al. (2017) is more like a literature review. But the bulk of MISQ methods papers fit this broad template.
