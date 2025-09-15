@@ -74,7 +74,7 @@ The papers (1) lay out a fundamental methodological problem (2) propose some sol
     </tr>
     <tr>
       <td>Benjamin et al. (2019)</td>
-      <td>Multicollinearity and measurement error lead to false positives in multiple regression</td>
+      <td>Conducting research from Darknet forums introduces special research challenges </td>
       <td>The DICE-E framework for Darknet research</td>
       <td>Case studies</td>
     </tr>
