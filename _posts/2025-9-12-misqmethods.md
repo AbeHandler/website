@@ -41,7 +41,7 @@ The papers (1) lay out a fundamental methodological problem (2) propose some sol
 <table border="1" cellpadding="5" cellspacing="0">
   <thead>
     <tr>
-      <th style="width: 180px;; padding: 10px;">Paper</th>
+      <th style="width: 190px;; padding: 10px;">Paper</th>
       <th style="padding: 10px;">Problem</th>
       <th style="padding: 10px;">Solution</th>
       <th style="padding: 10px;">Evaluations</th>
@@ -49,28 +49,16 @@ The papers (1) lay out a fundamental methodological problem (2) propose some sol
   </thead>
   <tbody>
     <tr>
-      <td>Goodhue et al. (2017)</td>
-      <td>Multicollinearity and measurement error lead to false positives in multiple regression</td>
-      <td>A correction procedure</td>
-      <td>Monte Carlo simulation</td>
-    </tr>
-    <tr>
-      <td>Schecter et al. (2022)</td>
-      <td>A gap between objective social network traces and subjective perceptions of a social network leads to measurement error in network analysis</td>
-      <td>An improved estimator</td>
-      <td>Monte Carlo simulation, lab study, case study</td>
-    </tr>
-    <tr>
       <td>Larsen & Bong (2016)</td>
       <td>Different constructs have different names in the literature which makes it hard to build cumulative knowledge</td>
       <td>NLP to identify overlapping constructs</td>
       <td>Controlled experiment with researchers, ML metrics</td>
     </tr>
     <tr>
-      <td>Tuunanen et al. (2024)</td>
-      <td>DSR projects are complex, they evolve through time, and they may involve multiple artifacts</td>
-      <td>The eDSR method for design science</td>
-      <td>Controlled experiments with researchers, interviews, expert panel</td>
+      <td>Goodhue et al. (2017)</td>
+      <td>Multicollinearity and measurement error lead to false positives in multiple regression</td>
+      <td>A correction procedure</td>
+      <td>Monte Carlo simulation</td>
     </tr>
     <tr>
       <td>Benjamin et al. (2019)</td>
@@ -95,6 +83,18 @@ The papers (1) lay out a fundamental methodological problem (2) propose some sol
       <td>Technology changes quickly. IS should strive for a cumulative tradition, but IS constructs from the past may not be appropriate for current tech.</td>
       <td>A process to update constructs</td>
       <td>Case studies</td>
+    </tr>
+    <tr>
+      <td>Schecter et al. (2022)</td>
+      <td>A gap between objective social network traces and subjective perceptions of a social network leads to measurement error in network analysis</td>
+      <td>An improved estimator</td>
+      <td>Monte Carlo simulation, lab study, case study</td>
+    </tr>
+    <tr>
+      <td>Tuunanen et al. (2024)</td>
+      <td>DSR projects are complex, they evolve through time, and they may involve multiple artifacts</td>
+      <td>The eDSR method for design science</td>
+      <td>Controlled experiments with researchers, interviews, expert panel</td>
     </tr>
   </tbody>
 </table>
