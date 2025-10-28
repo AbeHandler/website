@@ -76,13 +76,11 @@ Danatzis et al. (2024) propose a full "design theory" by applying a taxonomy fro
 
 Note that in Gregor & Jones the "kernel theories" from Walls et al. (1992) are called "justificatory knowledge." So in a way strategy #5 contains strategy #4.
 
-Phew. OK so that lays out the five strategies that DSR researchers use to apply "theory" in their work. I think there are two key takeaways.
-
 ## Takeaways
 
 Phew. OK so that lays out the five strategies that DSR researchers use to apply "theory" in their work. I think there are two key takeaways.
 
-- First, based on this analysis, the word "theory" is a little bit overloaded in contemporary DSR. Theory can mean background knowledge, use of a kernel theory (Walls et al., 1992), or a full-fledged design theory Gregor & Jones, 2007). Because the meaning of "theory" is a little ambiguous within DSR, I think it makes sense for researchers to clearly communicate how they are applying "theory" in their own papers, and how this choice aligns with prior work.
+- First, based on this analysis, the word "theory" is a little bit overloaded in contemporary DSR. Theory can mean background knowledge, use of a kernel theory (Walls et al., 1992), or a full-fledged design theory (Gregor & Jones, 2007). Because the meaning of "theory" is a little ambiguous within DSR, I think it makes sense for researchers to clearly communicate how they are applying "theory" in their own papers, and how this choice aligns with prior work.
 
 - Second, based on this analysis, "theory" does seem to be optional in design science research, especially at ISR. In the past, I have abandoned projects because I could not see a path towards a theoretical contribution. But in some cases, it may be OK to submit a DSR paper without theory. 
 
