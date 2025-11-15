@@ -5,40 +5,56 @@ date:   2025-11-15 12:00:00-0400
 categories:
 ---
 
-<table border="1" cellpadding="5" cellspacing="0">
+Design science authors must make a contribution through their work. But what counts as a contribution in design science? What even is a contribution anyway? This word has a very specific meaning both in academia and in DSR.
+
+To help understand what counts as a “contribution” in practice, <a href="https://www.linkedin.com/in/lan-sang" target="_blank" rel="noopener noreferrer">Lan Sang</a> and I reviewed 11 recent design science research papers from MIS Quarterly and ISR. We then searched for the word “contribution” in these manuscripts and broke down how these successful DSR authors described the contributions of their work. 
+
+This process revealed that authors tend to claim four broad classes of contributions: 1️⃣ practical contributions, 2️⃣ methodological contributions, 3️⃣ empirical contributions, and 4️⃣ theoretical contributions. 
+
+
+<table cellpadding="5" cellspacing="0" style="text-align:center; max-width:700px; margin:auto; width:100%; border-collapse:collapse;">
   <tbody>
     <tr>
-      <td>Example practical <strong>contribution</strong></td>
+      <td style="border-bottom:1px solid #000;">Example practical <strong>contribution</strong></td>
     </tr>
     <tr>
-      <td>“Our study … makes several <strong>contributions</strong> ... we propose a new SR process augmented by FastSR, which can save up to 65% in time and $73,500 per project compared to manual SR.” - Liu et al. (2025, p. 1051)</td>
+      <td><em>"Our study … makes several <strong>contributions</strong> ... we propose a new SR process augmented by FastSR, which can save up to 65% in time and $73,500 per project compared to manual SR." - Liu et al. (2025, p. 1051)</em><br></td>
     </tr>
     <tr>
-      <td>Example methodological <strong>contribution</strong></td>
+	  <td style="border:none;">&nbsp;</td>
+	</tr>
+    <tr>
+      <td style="border-bottom:1px solid #000;">Example methodological <strong>contribution</strong></td>
     </tr>
     <tr>
-      "Our study also follows the guidelines of Type I ML research and <strong>contributes</strong> a BiLSTM model IT artifact with a carefully combined feature-based model pretraining, expert knowledge layer transfer, and long sequential text classification to the IS knowledge base" - Ampel et al. (2024, p. 157)
+      <td><em>"Our study also follows the guidelines of Type I ML research and <strong>contributes</strong> a BiLSTM model IT artifact with a carefully combined feature-based model pretraining, expert knowledge layer transfer, and long sequential text classification to the IS knowledge base" - Ampel et al. (2024, p. 157)</em>
+      </td>
     </tr>
     <tr>
-      <td>Example empirical <strong>contribution</strong></td>
+  <td style="border:none;">&nbsp;</td>
+</tr>
+    <tr>
+      <td style="border-bottom:1px solid #000;">Example empirical <strong>contribution</strong></td>
     </tr>
     <tr>
-      <td>“Our research has several <strong>contributions</strong> … We demonstrate and evaluate the effectiveness of dynamic ML-based modeling on students’ short-term argumentation skills” - Wambsganss et al. (2024, p. 476)</td>
+      <td><em>"Our research has several <strong>contributions</strong> … We demonstrate and evaluate the effectiveness of dynamic ML-based modeling on students' short-term argumentation skills" - Wambsganss et al. (2024, p. 476)</em></td>
     </tr>
     <tr>
-      <td>Example theoretical <strong>contribution</strong></td>
+  <td style="border:none;">&nbsp;</td>
+</tr>
+    <tr>
+      <td style="border-bottom:1px solid #000;">Example theoretical <strong>contribution</strong></td>
     </tr>
     <tr>
-      <td>“This paper makes three main <strong>contributions</strong> to the literature. First, it contributes to the literature on digital inequality and digital inclusion by theorizing some of the main challenges of including digitally marginalized communities in the design of digital solutions…” - Faik et al. (2024, p. 238)</td>
+      <td><em>"This paper makes three main <strong>contributions</strong> to the literature. First, it contributes to the literature on digital inequality and digital inclusion by theorizing some of the main challenges of including digitally marginalized communities in the design of digital solutions…" - Faik et al. (2024, p. 238)</em></td>
     </tr>
+    <tr>
+	<td style="border:none;">&nbsp;</td>
+	</tr>
   </tbody>
 </table>
 
-Design science authors must make a contribution through their work. But what counts as a contribution in design science? What even is a contribution anyway? This word has a very specific meaning both in academia and in DSR.
-
-To help understand what counts as a “contribution” in practice, Lan Sang and I reviewed 11 recent design science research papers from MIS Quarterly and ISR. We then searched for the word “contribution” in these manuscripts and broke down how these successful DSR authors described the contributions of their work. 
-
-This process revealed that authors tend to claim four broad classes of contributions: 1️⃣ practical contributions, 2️⃣ methodological contributions, 3️⃣ empirical contributions, and 4️⃣ theoretical contributions. 
+# Contribution types
 
 1️⃣ Practical contributions are the most straightforward. Authors offering practical contributions propose that their work has some practical benefit for a group of stakeholders or for solving some established task. For example, Liu et al. (2025) claim that their work has practical benefits like time and cost savings during medical document review.
 
