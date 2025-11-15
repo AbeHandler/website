@@ -5,6 +5,35 @@ date:   2025-11-15 12:00:00-0400
 categories:
 ---
 
+<table border="1" cellpadding="5" cellspacing="0">
+  <tbody>
+    <tr>
+      <td>Example practical <strong>contribution</strong></td>
+    </tr>
+    <tr>
+      <td>“Our study … makes several <strong>contributions</strong> ... we propose a new SR process augmented by FastSR, which can save up to 65% in time and $73,500 per project compared to manual SR.” - Liu et al. (2025, p. 1051)</td>
+    </tr>
+    <tr>
+      <td>Example methodological <strong>contribution</strong></td>
+    </tr>
+    <tr>
+      "Our study also follows the guidelines of Type I ML research and <strong>contributes</strong> a BiLSTM model IT artifact with a carefully combined feature-based model pretraining, expert knowledge layer transfer, and long sequential text classification to the IS knowledge base" - Ampel et al. (2024, p. 157)
+    </tr>
+    <tr>
+      <td>Example empirical <strong>contribution</strong></td>
+    </tr>
+    <tr>
+      <td>“Our research has several <strong>contributions</strong> … We demonstrate and evaluate the effectiveness of dynamic ML-based modeling on students’ short-term argumentation skills” - Wambsganss et al. (2024, p. 476)</td>
+    </tr>
+    <tr>
+      <td>Example theoretical <strong>contribution</strong></td>
+    </tr>
+    <tr>
+      <td>“This paper makes three main <strong>contributions</strong> to the literature. First, it contributes to the literature on digital inequality and digital inclusion by theorizing some of the main challenges of including digitally marginalized communities in the design of digital solutions…” - Faik et al. (2024, p. 238)</td>
+    </tr>
+  </tbody>
+</table>
+
 Design science authors must make a contribution through their work. But what counts as a contribution in design science? What even is a contribution anyway? This word has a very specific meaning both in academia and in DSR.
 
 To help understand what counts as a “contribution” in practice, Lan Sang and I reviewed 11 recent design science research papers from MIS Quarterly and ISR. We then searched for the word “contribution” in these manuscripts and broke down how these successful DSR authors described the contributions of their work. 
@@ -22,18 +51,20 @@ This process revealed that authors tend to claim four broad classes of contribut
 Having broken down 1️⃣ - 4️⃣, I think the next question is how to do a good job at each of these kinds of contributions. What makes a claimed practical contribution good or interesting? How does one do a good job on 1️⃣ through 4️⃣. These are topics for another post.
 
 Papers reviewed:
+
+
 ### MIS Quarterly
 
-Ampel et al. (2024)
-Danatzis et al. (2024)
-Faik et al. (2024)
-Kim et al. (2023)
-Li et al. (2024)
-Liu et al. (2025)
-Zhang et al. (2024)
+- Ampel et al. (2024)
+- Danatzis et al. (2024)
+- Faik et al. (2024)
+- Kim et al. (2023)
+- Li et al. (2024)
+- Liu et al. (2025)
+- Zhang et al. (2024)
 
 ### Information Systems Research
-Bossler et al. (2025)
-Guo et al. (2025)
-Wambsganss et al. (2025)
-Xie et al. (2025)
+- Bossler et al. (2025)
+- Guo et al. (2025)
+- Wambsganss et al. (2025)
+- Xie et al. (2025)
