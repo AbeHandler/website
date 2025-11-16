@@ -18,7 +18,7 @@ This process revealed that authors tend to claim four broad classes of contribut
       <td style="border-bottom:1px solid #000;">Example practical <strong>contribution</strong></td>
     </tr>
     <tr>
-      <td><em>"Our study … makes several <strong>contributions</strong> ... we propose a new SR process augmented by FastSR, which can save up to 65% in time and $73,500 per project compared to manual SR." - Liu et al. (2025, p. 1051)</em><br></td>
+      <td><em>"Our study … makes several <strong>contributions</strong> ... we propose a new SR process augmented by FastSR, which can save up to 65% in time and $73,500 per project compared to manual SR." <br>- Liu et al. (2025, p. 1051)</em><br></td>
     </tr>
     <tr>
 	  <td style="border:none;">&nbsp;</td>
@@ -27,7 +27,7 @@ This process revealed that authors tend to claim four broad classes of contribut
       <td style="border-bottom:1px solid #000;">Example methodological <strong>contribution</strong></td>
     </tr>
     <tr>
-      <td><em>"Our study also follows the guidelines of Type I ML research and <strong>contributes</strong> a BiLSTM model IT artifact with a carefully combined feature-based model pretraining, expert knowledge layer transfer, and long sequential text classification to the IS knowledge base" - Ampel et al. (2024, p. 157)</em>
+      <td><em>"Our study also follows the guidelines of Type I ML research and <strong>contributes</strong> a BiLSTM model IT artifact with a carefully combined feature-based model pretraining, expert knowledge layer transfer, and long sequential text classification to the IS knowledge base" <br>- Ampel et al. (2024, p. 157)</em>
       </td>
     </tr>
     <tr>
@@ -37,7 +37,7 @@ This process revealed that authors tend to claim four broad classes of contribut
       <td style="border-bottom:1px solid #000;">Example empirical <strong>contribution</strong></td>
     </tr>
     <tr>
-      <td><em>"Our research has several <strong>contributions</strong> … We demonstrate and evaluate the effectiveness of dynamic ML-based modeling on students' short-term argumentation skills" - Wambsganss et al. (2024, p. 476)</em></td>
+      <td><em>"Our research has several <strong>contributions</strong> … We demonstrate and evaluate the effectiveness of dynamic ML-based modeling on students' short-term argumentation skills" <br>- Wambsganss et al. (2024, p. 476)</em></td>
     </tr>
     <tr>
   <td style="border:none;">&nbsp;</td>
@@ -46,7 +46,7 @@ This process revealed that authors tend to claim four broad classes of contribut
       <td style="border-bottom:1px solid #000;">Example theoretical <strong>contribution</strong></td>
     </tr>
     <tr>
-      <td><em>"This paper makes three main <strong>contributions</strong> to the literature. First, it contributes to the literature on digital inequality and digital inclusion by theorizing some of the main challenges of including digitally marginalized communities in the design of digital solutions…" - Faik et al. (2024, p. 238)</em></td>
+      <td><em>"This paper makes three main <strong>contributions</strong> to the literature. First, it contributes to the literature on digital inequality and digital inclusion by theorizing some of the main challenges of including digitally marginalized communities in the design of digital solutions…" <br>- Faik et al. (2024, p. 238)</em></td>
     </tr>
     <tr>
 	<td style="border:none;">&nbsp;</td>
