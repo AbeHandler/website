@@ -46,7 +46,7 @@ def fix_punct(s):
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("-csv", default="mentions.csv")
-    parser.add_argument("-o", default="../../../assets/theory-papers.jsonl")
+    parser.add_argument("-o", default="../../assets/theory-papers.jsonl")
     return parser.parse_args()
 
 
