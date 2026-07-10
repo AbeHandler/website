@@ -1,5 +1,7 @@
+export RBENV_VERSION := "3.2.2"
+
 init:
-	RBENV_VERSION=3.2.2 gem install bundler:2.5.23 && RBENV_VERSION=3.2.2 bundle install
+	gem install bundler:2.5.23 && bundle install
 
 clean:
 	bundle exec jekyll clean && rm -rf _site && rm -rf .jekyll-cache
