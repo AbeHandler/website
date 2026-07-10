@@ -1,10 +1,10 @@
 ---
 layout: page
-title: CanvasCLI
-description: An opinionated command-line interface for the Canvas learning management system.
+title: DSR theory concordance
+description: A tool to analyze "theory" in design science research
 img: 
-importance: 3
-redirect: https://github.com/AbeHandler/CanvasCLI
+importance: 1
+redirect: https://www.abehandler.com/dsrtheory/
 ---
 
 Every project has a beautiful feature showcase page.
