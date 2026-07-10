@@ -57,8 +57,17 @@ The `Dockerfile` is already set up: `ruby:3.2.2-slim` + `bundler:2.5.23`.
 
 ## DSR Theory Concordance
 
-Research data lives in `research/theory/talk/`. To update the concordance viewer at `/dsrtheory`:
+Source files:
+- `research/theory/talk/mentions.csv` — main annotation data
+- `research/theory/talk/export.py` — builds JSONL and embeds into HTML
+- `research/theory/talk/filtered_ft50.csv` — paper metadata
+- `research/theory/talk/codebook.md` — tagging codebook
 
+Compiled output (committed, deployed with the site):
+- `assets/theory-concordance.html` — the viewer (data embedded inline)
+- `assets/theory-papers.jsonl` — structured paper data
+
+To update:
 1. Edit `research/theory/talk/mentions.csv`
 2. Run `just export`
 3. Commit `assets/theory-concordance.html` and `assets/theory-papers.jsonl`
