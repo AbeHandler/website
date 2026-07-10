@@ -1,0 +1,7 @@
+json/
+papers/
+__pycache__/
+*.pyc
+*.tar.gz
+*.gz
+mentions_old.csv

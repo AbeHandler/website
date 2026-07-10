@@ -10,5 +10,10 @@ build:
 serve:
 	bundle exec jekyll serve  --livereload
 
-deploy:
+export:
+	cd _data/theory/talk && python export.py
+
+deploy: build
+	find ./_site -type f -name "*.html" -exec sed -i '' 's|https://gitcdn.link/repo/jwarby/jekyll-pygments-themes/master/monokai.css|https://s3.us-west-2.amazonaws.com/www.abehandler.com/assets/css/monokai.css|g' {} +
 	aws s3 cp _site s3://www.abehandler.com  --recursive
+	aws cloudfront create-invalidation --distribution-id E2NDQN6OXXN3XW --paths "/*"
