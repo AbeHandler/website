@@ -486,61 +486,11 @@ body { margin: 0; }
   position: fixed;
   inset: 0;
   z-index: 200;
-  background: rgba(0,0,0,0.45);
-  backdrop-filter: blur(3px);
+  background: oklch(0.1 0.004 75 / 0.55);
   align-items: center;
   justify-content: center;
 }
 #intro-overlay.open { display: flex; }
-#intro-modal {
-  background: oklch(0.99 0.002 75);
-  border: 1px solid oklch(0.85 0.004 75);
-  border-radius: 12px;
-  box-shadow: 0 16px 48px rgba(0,0,0,0.18);
-  max-width: 560px;
-  width: calc(100% - 40px);
-  padding: 32px 36px 28px;
-  position: relative;
-}
-#intro-modal h2 {
-  margin: 0 0 16px;
-  font-size: 18px;
-  font-weight: 700;
-  color: oklch(0.18 0.004 75);
-  line-height: 1.3;
-}
-#intro-modal p {
-  margin: 0 0 12px;
-  font-size: 14.5px;
-  line-height: 1.65;
-  color: oklch(0.28 0.004 75);
-}
-#intro-modal a { color: var(--blue); }
-#intro-close-btn {
-  margin-top: 20px;
-  display: inline-block;
-  padding: 8px 22px;
-  background: var(--blue);
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-family: 'Source Serif 4', Georgia, serif;
-  font-size: 14px;
-  cursor: pointer;
-}
-#intro-close-btn:hover { filter: brightness(1.1); }
-#intro-x {
-  position: absolute;
-  top: 14px;
-  right: 18px;
-  background: none;
-  border: none;
-  font-size: 20px;
-  line-height: 1;
-  color: oklch(0.6 0.004 75);
-  cursor: pointer;
-}
-#intro-x:hover { color: oklch(0.2 0.004 75); }
 .nav-link-btn {
   font-family: 'Source Serif 4', Georgia, serif;
   font-size: 12px;
@@ -563,8 +513,8 @@ body { margin: 0; }
   <div id="header">
     <div id="title-row">
       <div id="title-left">
-        <h1>A concordance of the word &#8220;theory&#8221; in self-described DSR papers from MISQ and ISR</h1>
-        <span id="subtitle" class="mono"><button class="nav-link-btn" onclick="openIntro(true)">About this tool</button> · <a href="https://en.wikipedia.org/wiki/Bible_concordance" target="_blank" style="color:var(--blue);text-decoration:underline;">About concordances</a> · <a href="https://gist.github.com/AbeHandler/4d684d8246496e2b65470bf2a8b69351" target="_blank" style="color:var(--blue);text-decoration:underline;">Codebook</a> · <a href="mailto:abram.handler@gmail.com" style="color:var(--blue);text-decoration:underline;">Email me to flag any categorization issues</a></span>
+        <h1>A concordance of the word &#8220;theory&#8221; in DSR papers from MISQ and ISR</h1>
+        <span id="subtitle" class="mono"><button class="nav-link-btn" onclick="openIntro()">About this tool</button> · <a href="https://en.wikipedia.org/wiki/Bible_concordance" target="_blank" style="color:var(--blue);text-decoration:underline;">About concordances</a> · <a href="https://gist.github.com/AbeHandler/4d684d8246496e2b65470bf2a8b69351" target="_blank" style="color:var(--blue);text-decoration:underline;">Codebook</a> · <a href="mailto:abram.handler@gmail.com" style="color:var(--blue);text-decoration:underline;">Email me to flag any categorization issues</a></span>
       </div>
       <div id="header-right">
         <input id="search-box" class="mono" type="text" placeholder="author, title, mention…" autocomplete="off">
@@ -637,12 +587,12 @@ body { margin: 0; }
 
 <!-- ── Intro modal ── -->
 <div id="intro-overlay" role="dialog" aria-modal="true" aria-labelledby="intro-title">
-  <div id="intro-modal">
-    <button id="intro-x" onclick="closeIntro()" aria-label="Close">&#x2715;</button>
-    <h2 id="intro-title">About this tool</h2>
-    <p>This resource is intended to help DSR authors sort this out. The application organizes every instance of &#8220;theory&#8221; in self-described DSR papers from MISQ and ISR using a data structure called a <a href="https://en.wikipedia.org/wiki/Key_Word_in_Context" target="_blank">KWIC view or concordance</a>.</p>
-    <p>I hope it helps DSR authors position their work. Good luck!</p>
-    <button id="intro-close-btn" onclick="closeIntro()">Get started</button>
+  <div style="background:oklch(0.98 0.004 75);border:1px solid oklch(0.88 0.004 75);border-radius:8px;padding:2rem 2.25rem;max-width:560px;width:90%;font-family:'Source Serif 4',Georgia,serif;box-shadow:0 8px 32px oklch(0.1 0.004 75 / 0.18);position:relative;">
+    <button id="intro-x" onclick="closeIntro()" aria-label="Close" style="position:absolute;top:14px;right:18px;background:none;border:none;font-size:20px;line-height:1;color:oklch(0.6 0.004 75);cursor:pointer;">&#x2715;</button>
+    <h2 id="intro-title" style="font-size:17px;font-weight:600;letter-spacing:-0.01em;color:oklch(0.18 0.004 75);margin:0 0 1rem;">What does &ldquo;theory&rdquo; mean in DSR papers from MISQ and ISR?</h2>
+    <p style="font-size:14px;line-height:1.6;color:oklch(0.25 0.004 75);margin:0 0 0.75rem;">Top IS journals emphasize &ldquo;theory.&rdquo; But there is an inherent mismatch between the design science research method and canonical approaches to &ldquo;theory&rdquo; in management research (Walls et al., 1992).</p>
+    <p style="font-size:14px;line-height:1.6;color:oklch(0.25 0.004 75);margin:0 0 0.75rem;">Standard approaches to theory building focus on describing empirical relationships between constructs (Whetten, 1989). But in DSR, researchers focus on helping achieve goals rather than describing the world (Hevner et al., 2004). Given this core discontinuity, how should DSR authors fulfill the strong preference for &ldquo;theory&rdquo; at MISQ and ISR?</p>
+    <p style="font-size:14px;line-height:1.6;color:oklch(0.25 0.004 75);margin:0 0 0.75rem;">This resource is intended to help DSR authors sort this out. The application organizes every instance of &ldquo;theory&rdquo; in self-described DSR papers from MISQ and ISR using a data structure called a <a href="https://en.wikipedia.org/wiki/Key_Word_in_Context" target="_blank" style="color:var(--blue);text-decoration:underline;text-underline-offset:2px;">KWIC view or concordance</a>. I hope it helps DSR authors position their work. Good luck!</p>
   </div>
 </div>
 
@@ -1287,16 +1237,12 @@ async function loadData() {
 }
 
 // ── Intro modal ──────────────────────────────────────────────────────────────
-let _introFromNav = false;
-function openIntro(fromNav) {
-  _introFromNav = !!fromNav;
+function openIntro() {
   document.getElementById('intro-overlay').classList.add('open');
-  const btn = document.getElementById('intro-close-btn');
-  btn.textContent = _introFromNav ? 'Close' : 'Get started';
 }
 function closeIntro() {
   document.getElementById('intro-overlay').classList.remove('open');
-  if (!_introFromNav) localStorage.setItem('dsr-intro-seen', '1');
+  localStorage.setItem('dsr-intro-seen', '1');
 }
 document.getElementById('intro-overlay').addEventListener('click', function(e) {
   if (e.target === this) closeIntro();
