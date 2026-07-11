@@ -1256,28 +1256,8 @@ window.__EMBEDDED_DATA__ = [{"_meta": true, "methods": ["Abbasi et al. (2024)", 
 // __EMBEDDED_DATA_END__
 loadData();
 
-document.addEventListener('DOMContentLoaded', () => {
-  if (!localStorage.getItem('concordance-intro-seen')) {
-    document.getElementById('intro-modal').style.display = 'flex';
-  }
-  document.getElementById('intro-close').addEventListener('click', () => {
-    localStorage.setItem('concordance-intro-seen', '1');
-    document.getElementById('intro-modal').style.display = 'none';
-  });
-});
-</script>
 
-<div id="intro-modal" style="display:none;position:fixed;inset:0;background:oklch(0.1 0.004 75 / 0.55);z-index:1000;align-items:center;justify-content:center;">
-  <div style="background:oklch(0.98 0.004 75);border:1px solid oklch(0.88 0.004 75);border-radius:8px;padding:2rem 2.25rem;max-width:560px;width:90%;font-family:'Source Serif 4',Georgia,serif;box-shadow:0 8px 32px oklch(0.1 0.004 75 / 0.18);">
-    <h2 style="font-size:17px;font-weight:600;letter-spacing:-0.01em;color:oklch(0.18 0.004 75);margin:0 0 1rem;">What does &ldquo;theory&rdquo; mean in DSR papers from MISQ and ISR?</h2>
-    <p style="font-size:14px;line-height:1.6;color:oklch(0.25 0.004 75);margin:0 0 0.75rem;">Top IS journals emphasize &ldquo;theory.&rdquo; But there is an inherent mismatch between the design science research method and canonical approaches to &ldquo;theory&rdquo; in management research (Walls et al., 1992).</p>
-    <p style="font-size:14px;line-height:1.6;color:oklch(0.25 0.004 75);margin:0 0 0.75rem;">Standard approaches to theory building focus on describing empirical relationships between constructs (Whetten, 1989). But in DSR, researchers focus on helping achieve goals rather than describing the world (Hevner et al., 2004). Given this core discontinuity, how should DSR authors fulfill the strong preference for &ldquo;theory&rdquo; at MISQ and ISR?</p>
-    <p style="font-size:14px;line-height:1.6;color:oklch(0.25 0.004 75);margin:0 0 1.5rem;">This resource is intended to help DSR authors sort this out. The application organizes every instance of &ldquo;theory&rdquo; in self-described DSR papers at MISQ and ISR for search and review using a data structure called a <a href="https://en.wikipedia.org/wiki/Key_Word_in_Context" target="_blank" style="color:var(--blue);text-decoration:underline;text-underline-offset:2px;">KWIC view or concordance</a>.</p>
-    <div style="text-align:center;">
-      <button id="intro-close" style="background:var(--blue);color:#fff;border:none;border-radius:5px;padding:7px 22px;font-size:13px;font-family:'Source Serif 4',Georgia,serif;cursor:pointer;letter-spacing:0.01em;">Get started</button>
-    </div>
-  </div>
-</div>
+</script>
 
 </body>
 </html>
