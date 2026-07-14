@@ -139,7 +139,6 @@ body { margin: 0; }
   line-height: 1.55;
   color: oklch(0.25 0.004 75);
   display: none;
-  pointer-events: none;
 }
 #sidebar-tip a { color: var(--blue); }
 .sidebar-group-header:first-child,
@@ -1308,29 +1307,41 @@ loadData();
 
 // ── Sidebar header tooltips ───────────────────────────────────────────────────
 const SIDEBAR_TIPS = {
-  'dsr-method': 'Some DSR papers incorporate theory by referencing or implementing a formal DSR method. For instance, some papers implement <a href="https://www.jstor.org/stable/pdf/23010780.pdf" target="_blank">Walls et al. (1992)</a>.',
+  'dsr-method': 'Some DSR papers incorporate theory by referencing or implementing a formal DSR method. For instance, some papers implement <a href="https://www.jstor.org/stable/pdf/23010780.pdf" target="_blank">Walls et al. (1992)</a>. Not all DSR papers implement a formal approach to theory.',
   'approach':   'DSR papers adopt different approaches to \u201ctheory.\u201d Some apply a formal design theory like <a href="https://www.jstor.org/stable/pdf/23010780.pdf" target="_blank">Walls et al. (1992)</a> with components like meta-requirements or testable hypotheses. Others don\u2019t include theory at all. See <a href="https://gist.github.com/AbeHandler/4d684d8246496e2b65470bf2a8b69351" target="_blank">codebook</a> for more.',
   'orientation': 'Some papers adopt a descriptive definition of theory like <a href="https://www.jstor.org/stable/258554" target="_blank">Whetten (1989)</a>. Others apply a prescriptive sense of theory like <a href="https://aisel.aisnet.org/misq/vol30/iss3/5/" target="_blank">Gregor (2006)</a>.',
 };
 
 (function() {
   const tip = document.getElementById('sidebar-tip');
+  let hideTimer = null;
+
+  function showTip(el) {
+    clearTimeout(hideTimer);
+    const html = SIDEBAR_TIPS[el.dataset.tip];
+    if (!html) return;
+    tip.innerHTML = html;
+    tip.style.display = 'block';
+    const r = el.getBoundingClientRect();
+    const pad = 8;
+    let x = r.right + pad;
+    let y = r.top;
+    if (x + tip.offsetWidth > window.innerWidth - 8) x = r.left - tip.offsetWidth - pad;
+    tip.style.left = x + 'px';
+    tip.style.top  = y + 'px';
+  }
+
+  function schedulHide() {
+    hideTimer = setTimeout(() => { tip.style.display = 'none'; }, 150);
+  }
+
   document.querySelectorAll('.sidebar-group-header[data-tip]').forEach(el => {
-    el.addEventListener('mouseenter', function(e) {
-      const html = SIDEBAR_TIPS[this.dataset.tip];
-      if (!html) return;
-      tip.innerHTML = html;
-      tip.style.display = 'block';
-      const r = this.getBoundingClientRect();
-      const pad = 8;
-      let x = r.right + pad;
-      let y = r.top;
-      if (x + tip.offsetWidth > window.innerWidth - 8) x = r.left - tip.offsetWidth - pad;
-      tip.style.left = x + 'px';
-      tip.style.top  = y + 'px';
-    });
-    el.addEventListener('mouseleave', () => { tip.style.display = 'none'; });
+    el.addEventListener('mouseenter', () => showTip(el));
+    el.addEventListener('mouseleave', schedulHide);
   });
+
+  tip.addEventListener('mouseenter', () => clearTimeout(hideTimer));
+  tip.addEventListener('mouseleave', schedulHide);
 })();
 
 </script>
