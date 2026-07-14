@@ -121,7 +121,27 @@ body { margin: 0; }
   color: oklch(0.55 0.004 75);
   margin-top: 10px;
   margin-bottom: 2px;
+  cursor: default;
 }
+.sidebar-group-header[data-tip] { border-bottom: 1px dotted oklch(0.7 0.004 75); cursor: help; }
+
+#sidebar-tip {
+  position: fixed;
+  z-index: 300;
+  max-width: 260px;
+  background: white;
+  border: 1px solid oklch(0.82 0.004 75);
+  border-radius: 6px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  padding: 10px 13px;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: oklch(0.25 0.004 75);
+  display: none;
+  pointer-events: none;
+}
+#sidebar-tip a { color: var(--blue); }
 .sidebar-group-header:first-child,
 .sidebar-group-header.first {
   margin-top: 8px;
@@ -528,6 +548,7 @@ body { margin: 0; }
 </style>
 </head>
 <body>
+<div id="sidebar-tip"></div>
 <div id="mobile-wall">
   <p>This is an analytic tool that requires a full screen. Please visit on a laptop or desktop.</p>
 </div>
@@ -561,15 +582,15 @@ body { margin: 0; }
     <div id="sidebar">
 
       <!-- Group 1: Method (formal) -->
-      <div class="sidebar-group-header first" title="The paper cites this DSR method to justify its approach to theory. A paper can cite multiple DSR methods.">DSR Method</div>
+      <div class="sidebar-group-header first" data-tip="dsr-method">DSR Method</div>
       <div id="method-rows"></div>
 
       <!-- Group 2: Approach to theory (nonformal) -->
-      <div class="sidebar-group-header">Approach to theory</div>
+      <div class="sidebar-group-header" data-tip="approach">Approach to theory</div>
       <div id="approach-rows"></div>
 
       <!-- Group 3: Orientation -->
-      <div class="sidebar-group-header">Theory orientation</div>
+      <div class="sidebar-group-header" data-tip="orientation">Theory orientation</div>
       <div id="orientation-rows"></div>
 
       <!-- Venue -->
@@ -1221,8 +1242,12 @@ async function loadData() {
 
   // countFor: cross-filtering counts — exclude the group being counted from active filters
   window.countFor = function(key, group) {
+    const q = state.searchQuery.toLowerCase();
     return PAPERS.filter(p => {
       if ((p.tag || 'No theory') === 'Research methods') return false;
+
+      // search query always applies
+      if (q && !paperMatchesSearch(p, q)) return false;
 
       // venue filter (excluded when counting venue)
       if (group !== 'venue' && state.selectedVenues.length > 0 && !state.selectedVenues.includes(p.venue)) return false;
@@ -1281,6 +1306,32 @@ window.__EMBEDDED_DATA__ = [{"_meta": true, "methods": ["Abbasi et al. (2024)", 
 // __EMBEDDED_DATA_END__
 loadData();
 
+// ── Sidebar header tooltips ───────────────────────────────────────────────────
+const SIDEBAR_TIPS = {
+  'dsr-method': 'Some DSR papers incorporate theory by referencing or implementing a formal DSR method. For instance, some papers implement <a href="https://www.jstor.org/stable/pdf/23010780.pdf" target="_blank">Walls et al. (1992)</a>.',
+  'approach':   'DSR papers adopt different approaches to \u201ctheory.\u201d Some apply a formal design theory like <a href="https://www.jstor.org/stable/pdf/23010780.pdf" target="_blank">Walls et al. (1992)</a> with components like meta-requirements or testable hypotheses. Others don\u2019t include theory at all. See <a href="https://gist.github.com/AbeHandler/4d684d8246496e2b65470bf2a8b69351" target="_blank">codebook</a> for more.',
+  'orientation': 'Some papers adopt a descriptive definition of theory like <a href="https://www.jstor.org/stable/258554" target="_blank">Whetten (1989)</a>. Others apply a prescriptive sense of theory like <a href="https://aisel.aisnet.org/misq/vol30/iss3/5/" target="_blank">Gregor (2006)</a>.',
+};
+
+(function() {
+  const tip = document.getElementById('sidebar-tip');
+  document.querySelectorAll('.sidebar-group-header[data-tip]').forEach(el => {
+    el.addEventListener('mouseenter', function(e) {
+      const html = SIDEBAR_TIPS[this.dataset.tip];
+      if (!html) return;
+      tip.innerHTML = html;
+      tip.style.display = 'block';
+      const r = this.getBoundingClientRect();
+      const pad = 8;
+      let x = r.right + pad;
+      let y = r.top;
+      if (x + tip.offsetWidth > window.innerWidth - 8) x = r.left - tip.offsetWidth - pad;
+      tip.style.left = x + 'px';
+      tip.style.top  = y + 'px';
+    });
+    el.addEventListener('mouseleave', () => { tip.style.display = 'none'; });
+  });
+})();
 
 </script>
 
