@@ -46,9 +46,8 @@ body { margin: 0; }
 }
 #title-left {
   display: flex;
-  align-items: baseline;
-  gap: 10px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 3px;
 }
 #title-left h1 {
   margin: 0;
@@ -480,6 +479,29 @@ body { margin: 0; }
 }
 #footer a { color: inherit; }
 
+/* ── Mobile wall ── */
+#mobile-wall {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  background: oklch(0.98 0.004 75);
+  align-items: flex-start;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 32px;
+  font-family: 'Source Serif 4', Georgia, serif;
+}
+#mobile-wall p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: oklch(0.28 0.004 75);
+  max-width: 320px;
+}
+@media (max-width: 1280px) {
+  #mobile-wall { display: flex; }
+}
+
 /* ── Intro modal ── */
 #intro-overlay {
   display: none;
@@ -506,6 +528,9 @@ body { margin: 0; }
 </style>
 </head>
 <body>
+<div id="mobile-wall">
+  <p>This is an analytic tool that requires a full screen. Please visit on a laptop or desktop.</p>
+</div>
 <div id="kwic-tooltip"></div>
 <div id="app">
 
