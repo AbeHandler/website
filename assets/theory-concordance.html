@@ -23,7 +23,7 @@ body { margin: 0; }
   display: flex;
   flex-direction: column;
 }
-:root { --header-h: 57px; --blue: oklch(0.38 0.08 250); }
+:root { --header-h: 57px; --blue: oklch(0.38 0.08 250); --banner-h: 0px; }
 
 /* ── Header ── */
 #header {
@@ -103,9 +103,9 @@ body { margin: 0; }
   width: 200px;
   flex-shrink: 0;
   position: fixed;
-  top: var(--header-h);
+  top: calc(var(--header-h) + var(--banner-h));
   left: 0;
-  height: calc(100vh - var(--header-h));
+  height: calc(100vh - var(--header-h) - var(--banner-h));
   overflow-y: hidden;
   background: white;
   border-right: 1px solid oklch(0.88 0.004 75);
@@ -312,7 +312,7 @@ body { margin: 0; }
   flex: 1;
   min-width: 0;
   margin-left: 200px;
-  margin-top: var(--header-h);
+  margin-top: calc(var(--header-h) + var(--banner-h));
   padding: 20px 40px 10px;
 }
 
@@ -544,6 +544,79 @@ body { margin: 0; }
   white-space: nowrap;
 }
 .nav-link-btn:hover { filter: brightness(0.8); }
+
+/* ── Use-case banner ── */
+#use-case-banner {
+  position: fixed;
+  top: var(--header-h);
+  left: 0;
+  right: 0;
+  z-index: 9;
+  background: #eaf1ff;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+  padding: 36px 40px;
+  display: none;
+}
+#use-case-banner.visible { display: block; }
+#banner-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+#banner-label {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .03em;
+  color: #1a3a66;
+  text-transform: none;
+}
+#banner-dismiss {
+  background: none;
+  border: none;
+  font-size: 16px;
+  line-height: 1;
+  color: #1a3a66;
+  cursor: pointer;
+  padding: 0 2px;
+  opacity: 0.6;
+}
+#banner-dismiss:hover { opacity: 1; }
+#banner-examples {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.banner-example {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--blue);
+  font-size: 15px;
+  line-height: 1.5;
+  cursor: pointer;
+  font-family: 'Source Serif 4', Georgia, serif;
+  text-align: left;
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+}
+.banner-example-arrow {
+  flex-shrink: 0;
+  font-size: 13px;
+  opacity: 0.7;
+}
+.banner-example-text {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.banner-example:hover .banner-example-text {
+  filter: brightness(0.75);
+}
+.banner-example:hover .banner-example-arrow {
+  opacity: 1;
+}
 </style>
 </head>
 <body>
@@ -571,6 +644,19 @@ body { margin: 0; }
           <span id="status-line"></span>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- ── Use-case banner ── -->
+  <div id="use-case-banner">
+    <div id="banner-label-row">
+      <span id="banner-label">Some ways to use this</span>
+      <button id="banner-dismiss" aria-label="Dismiss">&#x2715;</button>
+    </div>
+    <div id="banner-examples">
+      <div class="banner-example" data-example="1"><span class="banner-example-arrow">&#x21AA;</span><span class="banner-example-text">Reviewer 2 says my paper has no theory. Show me all the DSR papers from ISR that don&rsquo;t even include the word &ldquo;theory.&rdquo;</span></div>
+      <div class="banner-example" data-example="2"><span class="banner-example-arrow">&#x21AA;</span><span class="banner-example-text">I think my project is a good fit for Walls et al. (1992). Show me some examples applying this framework.</span></div>
+      <div class="banner-example" data-example="3"><span class="banner-example-arrow">&#x21AA;</span><span class="banner-example-text">Does statistical learning theory like from ML count as &ldquo;theory&rdquo;? Show me some papers that use &ldquo;theory&rdquo; in the more technical sense of the word.</span></div>
     </div>
   </div>
 
@@ -632,12 +718,21 @@ body { margin: 0; }
 
 <!-- ── Intro modal ── -->
 <div id="intro-overlay" role="dialog" aria-modal="true" aria-labelledby="intro-title">
-  <div style="background:oklch(0.98 0.004 75);border:1px solid oklch(0.88 0.004 75);border-radius:8px;padding:2rem 2.25rem;max-width:560px;width:90%;font-family:'Source Serif 4',Georgia,serif;box-shadow:0 8px 32px oklch(0.1 0.004 75 / 0.18);position:relative;">
+  <div style="background:oklch(0.98 0.004 75);border:1px solid oklch(0.88 0.004 75);border-radius:8px;padding:2rem 2.25rem;max-width:840px;width:90%;font-family:'Source Serif 4',Georgia,serif;box-shadow:0 8px 32px oklch(0.1 0.004 75 / 0.18);position:relative;">
     <button id="intro-x" onclick="closeIntro()" aria-label="Close" style="position:absolute;top:14px;right:18px;background:none;border:none;font-size:20px;line-height:1;color:oklch(0.6 0.004 75);cursor:pointer;">&#x2715;</button>
     <h2 id="intro-title" style="font-size:17px;font-weight:600;letter-spacing:-0.01em;color:oklch(0.18 0.004 75);margin:0 0 1rem;">What does &ldquo;theory&rdquo; mean in DSR papers from MISQ and ISR?</h2>
     <p style="font-size:14px;line-height:1.6;color:oklch(0.25 0.004 75);margin:0 0 0.75rem;">Top IS journals emphasize &ldquo;theory.&rdquo; But there is an inherent mismatch between the design science research method and canonical approaches to &ldquo;theory&rdquo; in management research (<a href="https://www.jstor.org/stable/pdf/23010780.pdf" target="_blank" style="color:var(--blue);text-decoration:underline;text-underline-offset:2px;">Walls et al., 1992</a>).</p>
     <p style="font-size:14px;line-height:1.6;color:oklch(0.25 0.004 75);margin:0 0 0.75rem;">Standard approaches to theory building focus on describing empirical relationships between constructs (<a href="https://www.jstor.org/stable/258554" target="_blank" style="color:var(--blue);text-decoration:underline;text-underline-offset:2px;">Whetten, 1989</a>). But in DSR, researchers focus on helping achieve goals rather than describing the world (<a href="https://misq.umn.edu/misq/article-abstract/28/1/75/261/Design-Science-in-Information-Systems-Research1" target="_blank" style="color:var(--blue);text-decoration:underline;text-underline-offset:2px;">Hevner et al., 2004</a>). Given this core discontinuity, how should DSR authors fulfill the strong preference for &ldquo;theory&rdquo; at MISQ and ISR?</p>
     <p style="font-size:14px;line-height:1.6;color:oklch(0.25 0.004 75);margin:0 0 0.75rem;">This resource is intended to help DSR authors sort this out. The application organizes every instance of &ldquo;theory&rdquo; in self-described DSR papers from MISQ and ISR using a data structure called a <a href="https://en.wikipedia.org/wiki/Key_Word_in_Context" target="_blank" style="color:var(--blue);text-decoration:underline;text-underline-offset:2px;">KWIC view or concordance</a>. I hope it helps DSR authors position their work. Good luck!</p>
+    <div style="text-align:center;margin-top:0.25rem;margin-bottom:0.5rem;"><button onclick="closeIntro()" style="background:var(--blue);color:white;border:none;border-radius:5px;padding:8px 18px;font-size:13px;font-family:'Source Serif 4',Georgia,serif;cursor:pointer;">Get started</button></div>
+    <div style="margin-top:1.25rem;padding-top:1rem;border-top:1px solid oklch(0.88 0.004 75);">
+      <div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;font-weight:600;letter-spacing:.03em;color:oklch(0.35 0.08 250);margin-bottom:12px;">Some ways to use this</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div class="intro-example" data-example="1" style="display:flex;align-items:baseline;gap:7px;cursor:pointer;color:var(--blue);font-size:14px;line-height:1.5;font-family:'Source Serif 4',Georgia,serif;"><span style="flex-shrink:0;font-size:13px;opacity:0.7;">&#x21AA;</span><span style="text-decoration:underline;text-underline-offset:2px;">Reviewer 2 says my paper has no theory. Show me all the DSR papers from ISR that don&rsquo;t even include the word &ldquo;theory.&rdquo;</span></div>
+        <div class="intro-example" data-example="2" style="display:flex;align-items:baseline;gap:7px;cursor:pointer;color:var(--blue);font-size:14px;line-height:1.5;font-family:'Source Serif 4',Georgia,serif;"><span style="flex-shrink:0;font-size:13px;opacity:0.7;">&#x21AA;</span><span style="text-decoration:underline;text-underline-offset:2px;">I think my project is a good fit for Walls et al. (1992). Show me some examples applying this framework.</span></div>
+        <div class="intro-example" data-example="3" style="display:flex;align-items:baseline;gap:7px;cursor:pointer;color:var(--blue);font-size:14px;line-height:1.5;font-family:'Source Serif 4',Georgia,serif;"><span style="flex-shrink:0;font-size:13px;opacity:0.7;">&#x21AA;</span><span style="text-decoration:underline;text-underline-offset:2px;">Does statistical learning theory like from ML count as &ldquo;theory&rdquo;? Show me some papers that use &ldquo;theory&rdquo; in the more technical sense of the word.</span></div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -1282,6 +1377,8 @@ async function loadData() {
 
   if (!localStorage.getItem('dsr-intro-seen')) {
     openIntro();
+  } else {
+    showBanner();
   }
 }
 
@@ -1292,9 +1389,68 @@ function openIntro() {
 function closeIntro() {
   document.getElementById('intro-overlay').classList.remove('open');
   localStorage.setItem('dsr-intro-seen', '1');
+  showBanner();
 }
+
+// ── Use-case banner ──────────────────────────────────────────────────────────
+function showBanner() {
+  if (localStorage.getItem('theory-banner-dismissed')) return;
+  const banner = document.getElementById('use-case-banner');
+  banner.classList.add('visible');
+  updateBannerHeight();
+}
+
+function dismissBanner() {
+  const banner = document.getElementById('use-case-banner');
+  banner.classList.remove('visible');
+  localStorage.setItem('theory-banner-dismissed', '1');
+  updateBannerHeight();
+}
+
+function updateBannerHeight() {
+  const banner = document.getElementById('use-case-banner');
+  const h = banner.classList.contains('visible') ? banner.offsetHeight : 0;
+  document.documentElement.style.setProperty('--banner-h', h + 'px');
+}
+
+document.getElementById('banner-dismiss').addEventListener('click', dismissBanner);
+
+document.getElementById('banner-examples').addEventListener('click', function(e) {
+  const row = e.target.closest('.banner-example');
+  if (!row) return;
+  const ex = row.dataset.example;
+  resetFilters();
+  if (ex === '1') {
+    state.selectedVenues = ['ISR'];
+    state.selectedApproaches = ['No theory'];
+  } else if (ex === '2') {
+    state.selectedMethods = ['Walls et al. (1992)'];
+  } else if (ex === '3') {
+    state.selectedApproaches = ['Technical theory'];
+  }
+  render();
+  dismissBanner();
+});
 document.getElementById('intro-overlay').addEventListener('click', function(e) {
   if (e.target === this) closeIntro();
+});
+
+document.getElementById('intro-overlay').addEventListener('click', function(e) {
+  const row = e.target.closest('.intro-example');
+  if (!row) return;
+  const ex = row.dataset.example;
+  resetFilters();
+  if (ex === '1') {
+    state.selectedVenues = ['ISR'];
+    state.selectedApproaches = ['No theory'];
+  } else if (ex === '2') {
+    state.selectedMethods = ['Walls et al. (1992)'];
+  } else if (ex === '3') {
+    state.selectedApproaches = ['Technical theory'];
+  }
+  localStorage.setItem('theory-banner-dismissed', '1');
+  closeIntro();
+  render();
 });
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closeIntro();
