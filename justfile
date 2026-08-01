@@ -31,15 +31,7 @@ docker-serve:
 export:
 	cd research/theory/talk && python export.py
 	cp research/assets/theory-papers.jsonl assets/theory-papers.jsonl
-	python3 -c "\
-import json; from pathlib import Path; \
-j = Path('assets/theory-papers.jsonl'); h = Path('assets/theory-concordance.html'); \
-lines = [json.loads(l) for l in j.read_text().strip().split('\n') if l.strip()]; \
-html = h.read_text(); blob = 'window.__EMBEDDED_DATA__ = ' + json.dumps(lines) + ';'; \
-s, e = '// __EMBEDDED_DATA_START__', '// __EMBEDDED_DATA_END__'; \
-si = html.index(s); ei = html.index(e) + len(e); \
-h.write_text(html[:si] + s + '\n' + blob + '\n' + e + html[ei:]); \
-print('Embedded', len(lines), 'records into', h)"
+	python3 research/theory/talk/embed.py
 
 deploy: build
 	find ./_site -type f -name "*.html" -exec sed -i '' 's|https://gitcdn.link/repo/jwarby/jekyll-pygments-themes/master/monokai.css|https://s3.us-west-2.amazonaws.com/www.abehandler.com/assets/css/monokai.css|g' {} +
