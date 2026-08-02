@@ -209,32 +209,27 @@ def main():
             "mentions": mentions,
         })
 
-    # add papers in papers/ that never appeared in mentions.csv (no theory mentions)
-    json_dir = Path(args.csv).parent / "json"
-    if json_dir.exists():
-        meta_lookup = _build_meta_lookup(Path(args.csv).parent)
+    # add papers from no_theory_papers.csv (explicit no-theory registry)
+    no_theory_path = Path(args.csv).parent / "no_theory_papers.csv"
+    if no_theory_path.exists():
         in_csv = set(df_raw["plink_id"])
-        for path in sorted(json_dir.glob("*.jsonl")):
-            pid = path.stem
+        nt_df = pd.read_csv(no_theory_path)
+        for _, row in nt_df.iterrows():
+            pid = str(row["id"]).strip()
             if pid in in_csv:
                 continue
-            text = path.read_text().lower()
-            if "design science" not in text or re.search(r"theor", text):
-                continue
-            m = meta_lookup.get(pid, {})
-            s2_id = s2_ids.get(pid)
             papers.append({
                 "id": pid,
-                "author": m.get("author", ""),
-                "year": m.get("year"),
-                "venue": m.get("venue", ""),
-                "title": clean_title(m.get("title", "")),
+                "author": str(row.get("author", "") or ""),
+                "year": int(row["year"]) if pd.notna(row.get("year")) else None,
+                "venue": str(row.get("venue", "") or ""),
+                "title": clean_title(str(row.get("title", "") or "")),
                 "tag": "No theory",
-                "dsr_method": None,
+                "dsr_method": [],
                 "approach": "No theory",
                 "orientation": None,
-                "plink_url": f"https://research.ebsco.com/plink/{pid}",
-                "s2_url": f"https://www.semanticscholar.org/paper/{s2_id}" if s2_id else None,
+                "plink_url": str(row.get("plink_url", "") or f"https://research.ebsco.com/plink/{pid}"),
+                "s2_url": str(row["s2_url"]) if pd.notna(row.get("s2_url")) and row.get("s2_url") else None,
                 "mentions": [],
             })
 
@@ -292,19 +287,6 @@ def main():
         for p in sorted(untagged, key=lambda p: len(p["mentions"])):
             print(f"  ({len(p['mentions'])})  {p['title']}")
 
-    # papers whose full text mentions "design science" but never "theor"
-    json_dir = Path(__file__).parent / "json"
-    if json_dir.exists():
-        title_lookup = _build_title_lookup(Path(args.csv).parent)
-        no_theory_ds = []
-        for path in sorted(json_dir.glob("*.jsonl")):
-            text = path.read_text().lower()
-            if "design science" in text and not re.search(r"theor", text):
-                no_theory_ds.append((path.stem, title_lookup.get(path.stem, "")))
-        if no_theory_ds:
-            print(f"\nNo theory but mentions design science ({len(no_theory_ds)}):")
-            for pid, title in no_theory_ds:
-                print(f"  {pid}  {title}")
 
 
 if __name__ == "__main__":
