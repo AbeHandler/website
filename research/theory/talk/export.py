@@ -143,10 +143,17 @@ def _build_title_lookup(base_dir: Path) -> dict:
 def validate(df):
     errors = []
     per_paper = df.groupby("plink_id").first().reset_index()
+
     passing = per_paper[per_paper["paper tag"] == "Theory in passing"]
     bad = passing[passing["dsr_method"].notna() & (passing["dsr_method"] != "")]
     for _, row in bad.iterrows():
         errors.append(f"  dsr_method should be None for '{row['title']}' (paper tag='Theory in passing', got '{row['dsr_method']}')")
+
+    rm = per_paper[per_paper["paper tag"] == "Research methods"]
+    bad_rm = rm[rm["dsr_method"].notna() & (rm["dsr_method"] != "") & (rm["dsr_method"] != "x")]
+    for _, row in bad_rm.iterrows():
+        errors.append(f"  Research methods paper should have dsr_method=x: '{row['title']}' (got '{row['dsr_method']}')\n  -> Fix in mentions.csv")
+
     if errors:
         raise ValueError("Validation errors:\n" + "\n".join(errors))
 
