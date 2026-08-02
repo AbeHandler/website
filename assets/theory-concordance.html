@@ -674,9 +674,9 @@ body { margin: 0; }
       <div class="sidebar-group-header" data-tip="approach">Approach to theory</div>
       <div id="approach-rows"></div>
 
-      <!-- Group 3: Orientation -->
-      <div class="sidebar-group-header" data-tip="orientation">Theory orientation</div>
-      <div id="orientation-rows"></div>
+      <!-- Group 3: Orientation (hidden — too few coded) -->
+      <!-- <div class="sidebar-group-header" data-tip="orientation">Theory orientation</div>
+      <div id="orientation-rows"></div> -->
 
       <!-- Venue -->
       <div class="sidebar-group-header">Venue</div>
@@ -1000,7 +1000,7 @@ function render() {
   document.getElementById('researchmethods-toggle').classList.toggle('active', state.researchMethodsOnly);
   buildSidebarGroup('method-rows',      SIDEBAR_METHODS,      state.selectedMethods,      'selectedMethods',      'method');
   buildSidebarGroup('approach-rows',    SIDEBAR_APPROACHES,   state.selectedApproaches,   'selectedApproaches',   'approach');
-  buildSidebarGroup('orientation-rows', SIDEBAR_ORIENTATIONS, state.selectedOrientations, 'selectedOrientations', 'orientation');
+  // buildSidebarGroup('orientation-rows', SIDEBAR_ORIENTATIONS, state.selectedOrientations, 'selectedOrientations', 'orientation');
   buildSidebarGroup('venue-rows',       SIDEBAR_VENUES,       state.selectedVenues,       'selectedVenues',       'venue');
 
   // Grey out non-year sidebar groups when research methods mode is active
