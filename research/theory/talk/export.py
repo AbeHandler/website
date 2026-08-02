@@ -201,7 +201,7 @@ def main():
             "venue": clean(row0.get("venue")) or "",
             "title": clean_title(clean(row0.get("title")) or ""),
             "tag": paper_tag,
-            "dsr_method": [m.strip() for m in (clean(row0.get("dsr_method")) or "").split(";") if m.strip()],
+            "dsr_method": [m.strip() for m in (clean(row0.get("dsr_method")) or "").split(";") if m.strip() and m.strip().lower() != "x"],
             "approach": clean(row0.get("approach")) or ("No theory" if paper_tag == "No theory" else None),
             "orientation": clean(row0.get("orientation")),
             "plink_url": f"https://research.ebsco.com/plink/{plink_id}",
