@@ -7,6 +7,8 @@ Usage:
 """
 import argparse
 import json
+import re
+from datetime import date
 from pathlib import Path
 
 
@@ -30,7 +32,10 @@ def main():
     end_marker   = "// __EMBEDDED_DATA_END__"
     si = html.index(start_marker)
     ei = html.index(end_marker) + len(end_marker)
-    html_path.write_text(html[:si] + start_marker + "\n" + blob + "\n" + end_marker + html[ei:])
+    html = html[:si] + start_marker + "\n" + blob + "\n" + end_marker + html[ei:]
+    version = date.today().strftime("v%Y-%m-%d")
+    html = re.sub(r'(id="version-stamp">)<!-- __VERSION__ -->[^<]*', rf'\g<1><!-- __VERSION__ -->{version}', html)
+    html_path.write_text(html)
     print(f"Embedded {len(lines)} records into {html_path}")
 
 

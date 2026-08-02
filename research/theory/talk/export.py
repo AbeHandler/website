@@ -15,6 +15,7 @@ import argparse
 import json
 import math
 import re
+from datetime import date
 from pathlib import Path
 
 import pandas as pd
@@ -201,8 +202,8 @@ def main():
             "venue": clean(row0.get("venue")) or "",
             "title": clean_title(clean(row0.get("title")) or ""),
             "tag": paper_tag,
-            "dsr_method": [m.strip() for m in (clean(row0.get("dsr_method")) or "").split(";") if m.strip() and m.strip().lower() != "x"],
-            "approach": clean(row0.get("approach")) or ("No theory" if paper_tag == "No theory" else None),
+            "dsr_method": [m.strip() for m in (clean(row0.get("dsr_method")) or "").split(";") if m.strip() and m.strip().lower() != "x"] or ([] if paper_tag == "Research methods" else ["No named method"]),
+            "approach": clean(row0.get("approach")) or ("No theory" if paper_tag == "No theory" else (None if paper_tag == "Research methods" else "N/A")),
             "orientation": clean(row0.get("orientation")),
             "plink_url": f"https://research.ebsco.com/plink/{plink_id}",
             "s2_url": s2_url,
@@ -225,7 +226,7 @@ def main():
                 "venue": str(row.get("venue", "") or ""),
                 "title": clean_title(str(row.get("title", "") or "")),
                 "tag": "No theory",
-                "dsr_method": [],
+                "dsr_method": ["No named method"],
                 "approach": "No theory",
                 "orientation": None,
                 "plink_url": str(row.get("plink_url", "") or f"https://research.ebsco.com/plink/{pid}"),
@@ -272,6 +273,8 @@ def main():
         start_idx = html.index(start_marker)
         end_idx   = html.index(end_marker) + len(end_marker)
         html = html[:start_idx] + start_marker + "\n" + embedded + "\n" + end_marker + html[end_idx:]
+        version = date.today().strftime("v%Y-%m-%d")
+        html = re.sub(r'(id="version-stamp">)<!-- __VERSION__ -->[^<]*', rf'\g<1><!-- __VERSION__ -->{version}', html)
         html_path.write_text(html)
         print(f"Embedded data -> {html_path}")
 
