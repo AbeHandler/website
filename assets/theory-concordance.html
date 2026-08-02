@@ -1364,7 +1364,7 @@ async function loadData() {
   window.countFor = function(key, group) {
     const q = state.searchQuery.toLowerCase();
     return PAPERS.filter(p => {
-      if ((p.tag || 'No theory') === 'Research methods' && group !== 'method') return false;
+      if ((p.tag || 'No theory') === 'Research methods' && group !== 'method' && state.selectedMethods.length === 0) return false;
 
       // search query always applies
       if (q && !paperMatchesSearch(p, q)) return false;
