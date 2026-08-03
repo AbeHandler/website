@@ -19,8 +19,9 @@ docker-serve:
 	docker compose up --build
 
 # Source of truth for the concordance viewer:
-#   research/theory/talk/mentions.csv  — edit this to add/update papers
-#   research/theory/talk/export.py     — converts CSV → jsonl and embeds into HTML
+#   research/theory/talk/mentions.csv        — edit this to add/update papers with theory mentions
+#   research/theory/talk/no_theory_papers.csv — papers with no theory mentions (explicit registry)
+#   research/theory/talk/export.py           — converts CSV → jsonl and embeds into HTML
 #
 # Build pipeline:
 #   1. export.py writes research/assets/theory-papers.jsonl
